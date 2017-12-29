@@ -1,6 +1,10 @@
 FROM alpine:3.7
 COPY qemu-*-static /usr/bin/
-COPY piu-piu /root/
 WORKDIR /root
-RUN apk add bash --update --no-cache
-ENTRYPOINT ["/root/piu-piu"]
+RUN apk add bash --update --no-cache && \
+apk add git --virtual .build-deps --update --no-cache && \
+git clone https://github.com/vaniacer/piu-piu-SH && \
+mv /root/piu-piu-SH/piu-piu /usr/bin/ && \
+apk del git --purge .build-deps && \
+rm -Rf /root/piu-piu-SH
+ENTRYPOINT ["piu-piu"]

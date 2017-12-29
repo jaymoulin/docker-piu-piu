@@ -17,11 +17,6 @@ manifests:
       architecture: ppc64le
       os: linux
   -
-    image: jaymoulin/piu-piu:$VERSION-s390x
-    platform:
-      architecture: s390x
-      os: linux
-  -
     image: jaymoulin/piu-piu:$VERSION-amd64
     platform:
       architecture: amd64
