@@ -7,4 +7,5 @@ git clone https://github.com/vaniacer/piu-piu-SH && \
 mv /root/piu-piu-SH/piu-piu /usr/bin/ && \
 apk del git --purge .build-deps && \
 rm -Rf /root/piu-piu-SH
+EXPOSE 54321 54322
 ENTRYPOINT ["piu-piu"]

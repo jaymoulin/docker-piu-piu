@@ -17,5 +17,5 @@ docker build -t piu-piu .
 Run already compiled image
 
 ```
-docker run --rm -ti jaymoulin/piu-piu
+docker run --rm -ti --net=host jaymoulin/piu-piu
 ```
