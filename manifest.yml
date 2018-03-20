@@ -1,6 +1,12 @@
 image: jaymoulin/piu-piu:$FULLVERSION
 manifests:
   -
+    image: jaymoulin/piu-piu:$VERSION-arm64v8
+    platform:
+      architecture: arm
+      variant: v8
+      os: linux
+  -
     image: jaymoulin/piu-piu:$VERSION-arm32v6
     platform:
       architecture: arm
