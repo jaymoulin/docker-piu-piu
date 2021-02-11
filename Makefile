@@ -15,7 +15,7 @@ build: qemu-aarch64-static qemu-arm-static
 		docker build -t jaymoulin/piu-piu:${VERSION}-$(arch) -f .Dockerfile ${CACHE} .;\
 	)
 publish:
-	docker push jaymoulin/piu-piu
+	docker push jaymoulin/piu-piu -a
 	cat manifest.yml | sed "s/\$$VERSION/${VERSION}/g" > manifest.yaml
 	cat manifest.yaml | sed "s/\$$FULLVERSION/${FULLVERSION}/g" > manifest2.yaml
 	mv manifest2.yaml manifest.yaml
