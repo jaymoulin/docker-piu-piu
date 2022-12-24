@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine
 COPY qemu-*-static /usr/bin/
 WORKDIR /root
 RUN apk add bash --update --no-cache && \
