@@ -1,5 +1,7 @@
 FROM alpine
-COPY qemu-*-static /usr/bin/
+ARG VERSION
+ARG TARGETPLATFORM
+LABEL version="${VERSION}-${TARGETPLATFORM}"
 WORKDIR /root
 RUN apk add bash --update --no-cache && \
 apk add git --virtual .build-deps --update --no-cache && \
